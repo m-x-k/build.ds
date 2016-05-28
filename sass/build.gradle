@@ -1,0 +1,16 @@
+apply plugin: "com.github.robfletcher.compass"
+
+buildscript {
+  repositories {
+    jcenter()
+    maven { url "http://dl.bintray.com/robfletcher/gradle-plugins" }
+  }
+  dependencies {
+    classpath "com.github.robfletcher:compass-gradle-plugin:2.0.5"
+  }
+}
+
+compass {
+  cssDir = file("public/styles")
+  sassDir = file("src/main/sass")
+}

@@ -1,0 +1,24 @@
+{
+
+  "jobServer": {
+    "type": "jenkins",
+    "url": "",
+    "username": "",
+    "password": ""
+  },
+  "jobList": [
+
+    {
+      "label": "job1",
+      "path": "",
+      "display": true
+    },
+    {
+      "label": "job2",
+      "path": "",
+      "display": true
+    }
+
+  ]
+
+}
