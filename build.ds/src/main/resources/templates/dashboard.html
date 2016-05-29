@@ -10,17 +10,33 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="widget status-warning">
-            <p th:text="'WARNING ' + ${name} + '!'"/>
+        <div class="panel widget status-warning col-md-3">
+            <div class="panel-heading">
+                <p th:text="'WARNING ' + ${name} + '!'"/>
+            </div>
+            <div class="panel-body">
+            </div>
         </div>
-        <div class="widget status-danger">
-            <p th:text="'DANGER ' + ${name} + '!'"/>
+        <div class="panel widget status-danger col-md-3">
+            <div class="panel-heading">
+                <p th:text="'DANGER ' + ${name} + '!'"/>
+            </div>
+            <div class="panel-body">
+            </div>
         </div>
-        <div class="widget status-success">
-            <p th:text="'SUCCESS ' + ${name} + '!'"/>
+        <div class="panel widget status-success col-md-3">
+            <div class="panel-heading">
+                <p th:text="'SUCCESS ' + ${name} + '!'"/>
+            </div>
+            <div class="panel-body">
+            </div>
         </div>
-        <div class="widget status-disabled">
-            <p th:text="'DISABLED ' + ${name} + '!'"/>
+        <div class="panel widget status-disabled col-md-3">
+            <div class="panel-heading">
+                <p th:text="'DISABLED ' + ${name} + '!'"/>
+            </div>
+            <div class="panel-body">
+            </div>
         </div>
     </div>
 </div>
