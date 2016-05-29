@@ -17,7 +17,7 @@ public class Application {
     public static void main(String[] args) throws Exception {
         ApplicationContext ctx = SpringApplication.run(Application.class, args);
         Config config = loadConfig();
-        System.out.println(config);
+        System.out.println("CONFIG: " + config);
     }
 
     private static Config loadConfig() throws IOException {
