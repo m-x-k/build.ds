@@ -31,28 +31,35 @@
     background-color: #00cb11;
   }
 }
-/* line 37, ../../src/main/sass/app.scss */
+@-webkit-keyframes status-disabled-background {
+  0% {
+    background-color: #aaaaaa;
+  }
+  50% {
+    background-color: #888888;
+  }
+  100% {
+    background-color: #aaaaaa;
+  }
+}
+/* line 46, ../../src/main/sass/app.scss */
 .widget {
   text-align: center;
 }
 
-/* line 41, ../../src/main/sass/app.scss */
+/* line 50, ../../src/main/sass/app.scss */
 .widget.status-warning {
   background-color: #e82711;
   -webkit-animation: status-warning-background 2s ease infinite;
   -moz-animation: status-warning-background 2s ease infinite;
   -ms-animation: status-warning-background 2s ease infinite;
 }
-/* line 45, ../../src/main/sass/app.scss */
-.widget.status-warning .icon-warning-sign {
-  display: inline-block;
-}
-/* line 49, ../../src/main/sass/app.scss */
+/* line 54, ../../src/main/sass/app.scss */
 .widget.status-warning .title, .widget.status-warning .more-info {
   color: #fff;
 }
 
-/* line 54, ../../src/main/sass/app.scss */
+/* line 59, ../../src/main/sass/app.scss */
 .widget.status-danger {
   color: #fff;
   background-color: #eeae32;
@@ -60,16 +67,12 @@
   -moz-animation: status-danger-background 2s ease infinite;
   -ms-animation: status-danger-background 2s ease infinite;
 }
-/* line 59, ../../src/main/sass/app.scss */
-.widget.status-danger .icon-warning-sign {
-  display: inline-block;
-}
-/* line 63, ../../src/main/sass/app.scss */
+/* line 64, ../../src/main/sass/app.scss */
 .widget.status-danger .title, .widget.status-danger .more-info {
   color: #fff;
 }
 
-/* line 68, ../../src/main/sass/app.scss */
+/* line 69, ../../src/main/sass/app.scss */
 .widget.status-success {
   color: #fff;
   background-color: #00cb11;
@@ -77,16 +80,25 @@
   -moz-animation: status-success-background 2s ease infinite;
   -ms-animation: status-success-background 2s ease infinite;
 }
-/* line 73, ../../src/main/sass/app.scss */
-.widget.status-success .icon-warning-sign {
-  display: inline-block;
-}
-/* line 77, ../../src/main/sass/app.scss */
+/* line 74, ../../src/main/sass/app.scss */
 .widget.status-success .title, .widget.status-success .more-info {
   color: #fff;
 }
 
-/* line 82, ../../src/main/sass/app.scss */
+/* line 79, ../../src/main/sass/app.scss */
+.widget.status-disabled {
+  color: #fff;
+  background-color: #aaaaaa;
+  -webkit-animation: status-disabled-background 2s ease infinite;
+  -moz-animation: status-disabled-background 2s ease infinite;
+  -ms-animation: status-disabled-background 2s ease infinite;
+}
+/* line 84, ../../src/main/sass/app.scss */
+.widget.status-disabled .title, .widget.status-disabled .more-info {
+  color: #fff;
+}
+
+/* line 89, ../../src/main/sass/app.scss */
 .more-info {
   font-size: 15px;
   position: absolute;

@@ -1,7 +1,7 @@
 package com.mxk.build.ds.application;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mxk.build.ds.model.Config;
+import com.mxk.build.ds.config.Config;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationContext;
 import java.io.File;
 import java.io.IOException;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.mxk.build.ds")
 public class Application {
 
     private static String configLocation = "config/config.json";
