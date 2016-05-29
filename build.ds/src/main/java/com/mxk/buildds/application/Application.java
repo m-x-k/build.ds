@@ -1,7 +1,7 @@
-package com.mxk.build.ds.application;
+package com.mxk.buildds.application;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mxk.build.ds.config.Config;
+import com.mxk.buildds.config.Config;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;

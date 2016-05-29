@@ -43,6 +43,10 @@ $text-disabled-color: #fff;
   -ms-animation:      $animation-name $duration $function #{$animation-iteration-count};
 }
 
+.dashboard {
+  background-color: $background-color;
+}
+
 .widget {
   text-align: center;
 }

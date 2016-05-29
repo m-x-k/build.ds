@@ -1,4 +1,4 @@
-package com.mxk.build.ds.controller;
+package com.mxk.buildds.controller;
 
 import org.junit.Before;
 import org.junit.Test;

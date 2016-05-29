@@ -43,23 +43,28 @@
   }
 }
 /* line 46, ../../src/main/sass/app.scss */
+.dashboard {
+  background-color: #222;
+}
+
+/* line 50, ../../src/main/sass/app.scss */
 .widget {
   text-align: center;
 }
 
-/* line 50, ../../src/main/sass/app.scss */
+/* line 54, ../../src/main/sass/app.scss */
 .widget.status-warning {
   background-color: #e82711;
   -webkit-animation: status-warning-background 2s ease infinite;
   -moz-animation: status-warning-background 2s ease infinite;
   -ms-animation: status-warning-background 2s ease infinite;
 }
-/* line 54, ../../src/main/sass/app.scss */
+/* line 58, ../../src/main/sass/app.scss */
 .widget.status-warning .title, .widget.status-warning .more-info {
   color: #fff;
 }
 
-/* line 59, ../../src/main/sass/app.scss */
+/* line 63, ../../src/main/sass/app.scss */
 .widget.status-danger {
   color: #fff;
   background-color: #eeae32;
@@ -67,12 +72,12 @@
   -moz-animation: status-danger-background 2s ease infinite;
   -ms-animation: status-danger-background 2s ease infinite;
 }
-/* line 64, ../../src/main/sass/app.scss */
+/* line 68, ../../src/main/sass/app.scss */
 .widget.status-danger .title, .widget.status-danger .more-info {
   color: #fff;
 }
 
-/* line 69, ../../src/main/sass/app.scss */
+/* line 73, ../../src/main/sass/app.scss */
 .widget.status-success {
   color: #fff;
   background-color: #00cb11;
@@ -80,12 +85,12 @@
   -moz-animation: status-success-background 2s ease infinite;
   -ms-animation: status-success-background 2s ease infinite;
 }
-/* line 74, ../../src/main/sass/app.scss */
+/* line 78, ../../src/main/sass/app.scss */
 .widget.status-success .title, .widget.status-success .more-info {
   color: #fff;
 }
 
-/* line 79, ../../src/main/sass/app.scss */
+/* line 83, ../../src/main/sass/app.scss */
 .widget.status-disabled {
   color: #fff;
   background-color: #aaaaaa;
@@ -93,12 +98,12 @@
   -moz-animation: status-disabled-background 2s ease infinite;
   -ms-animation: status-disabled-background 2s ease infinite;
 }
-/* line 84, ../../src/main/sass/app.scss */
+/* line 88, ../../src/main/sass/app.scss */
 .widget.status-disabled .title, .widget.status-disabled .more-info {
   color: #fff;
 }
 
-/* line 89, ../../src/main/sass/app.scss */
+/* line 93, ../../src/main/sass/app.scss */
 .more-info {
   font-size: 15px;
   position: absolute;
