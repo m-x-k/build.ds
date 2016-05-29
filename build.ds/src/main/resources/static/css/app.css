@@ -1,7 +1,3 @@
-/*
-  //=require_directory .
-  //=require_tree ../../widgets
-*/
 @-webkit-keyframes status-warning-background {
   0% {
     background-color: #e82711;
@@ -35,159 +31,28 @@
     background-color: #00cb11;
   }
 }
-/* line 47, ../../src/main/sass/app.scss */
-html {
-  font-size: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
-/* line 53, ../../src/main/sass/app.scss */
-body {
-  margin: 0;
-  background-color: #222;
-  font-size: 20px;
-  color: #fff;
-  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-/* line 61, ../../src/main/sass/app.scss */
-b, strong {
-  font-weight: bold;
-}
-
-/* line 65, ../../src/main/sass/app.scss */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* line 70, ../../src/main/sass/app.scss */
-img {
-  border: 0;
-  -ms-interpolation-mode: bicubic;
-  vertical-align: middle;
-}
-
-/* line 76, ../../src/main/sass/app.scss */
-img, object {
-  max-width: 100%;
-}
-
-/* line 80, ../../src/main/sass/app.scss */
-iframe {
-  max-width: 100%;
-}
-
-/* line 84, ../../src/main/sass/app.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-}
-
-/* line 90, ../../src/main/sass/app.scss */
-td {
-  vertical-align: middle;
-}
-
-/* line 94, ../../src/main/sass/app.scss */
-ul, ol {
-  padding: 0;
-  margin: 0;
-}
-
-/* line 99, ../../src/main/sass/app.scss */
-h1, h2, h3, h4, h5, p {
-  padding: 0;
-  margin: 0;
-}
-
-/* line 103, ../../src/main/sass/app.scss */
-h1 {
-  margin-bottom: 12px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: 400;
-}
-
-/* line 109, ../../src/main/sass/app.scss */
-h2 {
-  text-transform: uppercase;
-  font-size: 76px;
-  font-weight: 700;
-  color: #fff;
-}
-
-/* line 115, ../../src/main/sass/app.scss */
-h3 {
-  font-size: 25px;
-  font-weight: 600;
-  color: #fff;
-}
-
-/* line 124, ../../src/main/sass/app.scss */
-.gridster {
-  margin: 0px auto;
-}
-
-/* line 128, ../../src/main/sass/app.scss */
-.icon-background {
-  pointer-events: none;
-  width: 100% !important;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0.1;
-  font-size: 275px;
-  text-align: center;
-  margin-top: 82px;
-}
-
-/* line 141, ../../src/main/sass/app.scss */
-.list-nostyle {
-  list-style: none;
-}
-
-/* line 145, ../../src/main/sass/app.scss */
-.gridster ul {
-  list-style: none;
-}
-
-/* line 149, ../../src/main/sass/app.scss */
-.gs_w {
-  width: 100%;
-  display: table;
-  cursor: pointer;
-}
-
-/* line 155, ../../src/main/sass/app.scss */
+/* line 37, ../../src/main/sass/app.scss */
 .widget {
   text-align: center;
-  width: inherit;
-  height: inherit;
-  display: table-cell;
-  vertical-align: middle;
 }
 
-/* line 163, ../../src/main/sass/app.scss */
+/* line 41, ../../src/main/sass/app.scss */
 .widget.status-warning {
   background-color: #e82711;
   -webkit-animation: status-warning-background 2s ease infinite;
   -moz-animation: status-warning-background 2s ease infinite;
   -ms-animation: status-warning-background 2s ease infinite;
 }
-/* line 167, ../../src/main/sass/app.scss */
+/* line 45, ../../src/main/sass/app.scss */
 .widget.status-warning .icon-warning-sign {
   display: inline-block;
 }
-/* line 171, ../../src/main/sass/app.scss */
+/* line 49, ../../src/main/sass/app.scss */
 .widget.status-warning .title, .widget.status-warning .more-info {
   color: #fff;
 }
 
-/* line 176, ../../src/main/sass/app.scss */
+/* line 54, ../../src/main/sass/app.scss */
 .widget.status-danger {
   color: #fff;
   background-color: #eeae32;
@@ -195,16 +60,16 @@ h3 {
   -moz-animation: status-danger-background 2s ease infinite;
   -ms-animation: status-danger-background 2s ease infinite;
 }
-/* line 181, ../../src/main/sass/app.scss */
+/* line 59, ../../src/main/sass/app.scss */
 .widget.status-danger .icon-warning-sign {
   display: inline-block;
 }
-/* line 185, ../../src/main/sass/app.scss */
+/* line 63, ../../src/main/sass/app.scss */
 .widget.status-danger .title, .widget.status-danger .more-info {
   color: #fff;
 }
 
-/* line 190, ../../src/main/sass/app.scss */
+/* line 68, ../../src/main/sass/app.scss */
 .widget.status-success {
   color: #fff;
   background-color: #00cb11;
@@ -212,106 +77,20 @@ h3 {
   -moz-animation: status-success-background 2s ease infinite;
   -ms-animation: status-success-background 2s ease infinite;
 }
-/* line 195, ../../src/main/sass/app.scss */
+/* line 73, ../../src/main/sass/app.scss */
 .widget.status-success .icon-warning-sign {
   display: inline-block;
 }
-/* line 199, ../../src/main/sass/app.scss */
+/* line 77, ../../src/main/sass/app.scss */
 .widget.status-success .title, .widget.status-success .more-info {
   color: #fff;
 }
 
-/* line 204, ../../src/main/sass/app.scss */
+/* line 82, ../../src/main/sass/app.scss */
 .more-info {
   font-size: 15px;
   position: absolute;
   bottom: 32px;
   left: 0;
   right: 0;
-}
-
-/* line 212, ../../src/main/sass/app.scss */
-.updated-at {
-  font-size: 15px;
-  position: absolute;
-  bottom: 12px;
-  left: 0;
-  right: 0;
-}
-
-/* line 220, ../../src/main/sass/app.scss */
-#save-gridster {
-  display: none;
-  position: fixed;
-  top: 0;
-  margin: 0px auto;
-  left: 50%;
-  z-index: 1000;
-  background: black;
-  width: 190px;
-  text-align: center;
-  border: 1px solid white;
-  border-top: 0px;
-  margin-left: -95px;
-  padding: 15px;
-}
-
-/* line 236, ../../src/main/sass/app.scss */
-#save-gridster:hover {
-  padding-top: 25px;
-}
-
-/* line 240, ../../src/main/sass/app.scss */
-#saving-instructions {
-  display: none;
-  padding: 10px;
-  width: 500px;
-  height: 122px;
-  z-index: 1000;
-  background: white;
-  top: 100px;
-  color: black;
-  font-size: 15px;
-  padding-bottom: 4px;
-}
-/* line 252, ../../src/main/sass/app.scss */
-#saving-instructions textarea {
-  white-space: nowrap;
-  width: 494px;
-  height: 80px;
-}
-
-/* line 259, ../../src/main/sass/app.scss */
-#lean_overlay {
-  position: fixed;
-  z-index: 100;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-  background: #000;
-  display: none;
-}
-
-/* line 270, ../../src/main/sass/app.scss */
-#container {
-  padding-top: 5px;
-}
-
-/* line 278, ../../src/main/sass/app.scss */
-.clearfix:before, .clearfix:after {
-  content: "\0020";
-  display: block;
-  height: 0;
-  overflow: hidden;
-}
-
-/* line 279, ../../src/main/sass/app.scss */
-.clearfix:after {
-  clear: both;
-}
-
-/* line 280, ../../src/main/sass/app.scss */
-.clearfix {
-  zoom: 1;
 }

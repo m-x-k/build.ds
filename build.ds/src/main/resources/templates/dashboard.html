@@ -2,20 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Dashboard</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link href="css/app.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="js/bootstrap.min.css"/>
 </head>
 <body>
-    <div id="container">
+<div class="container">
+    <div class="row">
         <div class="widget status-warning">
-            <p th:text="'WARNING ' + ${name} + '!'" />
+            <p th:text="'WARNING ' + ${name} + '!'"/>
         </div>
         <div class="widget status-danger">
-            <p th:text="'DANGER ' + ${name} + '!'" />
+            <p th:text="'DANGER ' + ${name} + '!'"/>
         </div>
         <div class="widget status-success">
-            <p th:text="'SUCCESS ' + ${name} + '!'" />
+            <p th:text="'SUCCESS ' + ${name} + '!'"/>
         </div>
     </div>
+</div>
 </body>
 </html>
