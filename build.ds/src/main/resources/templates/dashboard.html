@@ -6,6 +6,16 @@
     <link href="css/app.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <p th:text="'Hello me, ' + ${name} + '!'" />
+    <div id="container">
+        <div class="widget status-warning">
+            <p th:text="'WARNING ' + ${name} + '!'" />
+        </div>
+        <div class="widget status-danger">
+            <p th:text="'DANGER ' + ${name} + '!'" />
+        </div>
+        <div class="widget status-success">
+            <p th:text="'SUCCESS ' + ${name} + '!'" />
+        </div>
+    </div>
 </body>
 </html>

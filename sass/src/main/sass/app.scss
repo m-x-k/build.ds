@@ -16,6 +16,10 @@ $background-danger-color-1: #eeae32;
 $background-danger-color-2: #ff9618;
 $text-danger-color: #fff;
 
+$background-success-color-1: #00cb11;
+$background-success-color-2: #00aa00;
+$text-success-color: #fff;
+
 @-webkit-keyframes status-warning-background {
   0%   { background-color: $background-warning-color-1; }
   50%  { background-color: $background-warning-color-2; }
@@ -25,6 +29,11 @@ $text-danger-color: #fff;
   0%   { background-color: $background-danger-color-1; }
   50%  { background-color: $background-danger-color-2; }
   100% { background-color: $background-danger-color-1; }
+}
+@-webkit-keyframes status-success-background {
+  0%   { background-color: $background-success-color-1; }
+  50%  { background-color: $background-success-color-2; }
+  100% { background-color: $background-success-color-1; }
 }
 @mixin animation($animation-name, $duration, $function, $animation-iteration-count:""){
   -webkit-animation:  $animation-name $duration $function #{$animation-iteration-count};
@@ -175,6 +184,20 @@ h3 {
 
   .title, .more-info {
     color: $text-danger-color;
+  }
+}
+
+.widget.status-success {
+  color: $text-success-color;
+  background-color: $background-success-color-1;
+  @include animation(status-success-background, 2s, ease, infinite);
+
+  .icon-warning-sign {
+    display: inline-block;
+  }
+
+  .title, .more-info {
+    color: $text-success-color;
   }
 }
 

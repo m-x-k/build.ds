@@ -24,15 +24,25 @@
     background-color: #eeae32;
   }
 }
-/* line 38, ../../src/main/sass/app.scss */
+@-webkit-keyframes status-success-background {
+  0% {
+    background-color: #00cb11;
+  }
+  50% {
+    background-color: #00aa00;
+  }
+  100% {
+    background-color: #00cb11;
+  }
+}
+/* line 47, ../../src/main/sass/app.scss */
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  background-color: #00ff98;
 }
 
-/* line 44, ../../src/main/sass/app.scss */
+/* line 53, ../../src/main/sass/app.scss */
 body {
   margin: 0;
   background-color: #222;
@@ -41,59 +51,59 @@ body {
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 52, ../../src/main/sass/app.scss */
+/* line 61, ../../src/main/sass/app.scss */
 b, strong {
   font-weight: bold;
 }
 
-/* line 56, ../../src/main/sass/app.scss */
+/* line 65, ../../src/main/sass/app.scss */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* line 61, ../../src/main/sass/app.scss */
+/* line 70, ../../src/main/sass/app.scss */
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
   vertical-align: middle;
 }
 
-/* line 67, ../../src/main/sass/app.scss */
+/* line 76, ../../src/main/sass/app.scss */
 img, object {
   max-width: 100%;
 }
 
-/* line 71, ../../src/main/sass/app.scss */
+/* line 80, ../../src/main/sass/app.scss */
 iframe {
   max-width: 100%;
 }
 
-/* line 75, ../../src/main/sass/app.scss */
+/* line 84, ../../src/main/sass/app.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
 }
 
-/* line 81, ../../src/main/sass/app.scss */
+/* line 90, ../../src/main/sass/app.scss */
 td {
   vertical-align: middle;
 }
 
-/* line 85, ../../src/main/sass/app.scss */
+/* line 94, ../../src/main/sass/app.scss */
 ul, ol {
   padding: 0;
   margin: 0;
 }
 
-/* line 90, ../../src/main/sass/app.scss */
+/* line 99, ../../src/main/sass/app.scss */
 h1, h2, h3, h4, h5, p {
   padding: 0;
   margin: 0;
 }
 
-/* line 94, ../../src/main/sass/app.scss */
+/* line 103, ../../src/main/sass/app.scss */
 h1 {
   margin-bottom: 12px;
   text-align: center;
@@ -101,7 +111,7 @@ h1 {
   font-weight: 400;
 }
 
-/* line 100, ../../src/main/sass/app.scss */
+/* line 109, ../../src/main/sass/app.scss */
 h2 {
   text-transform: uppercase;
   font-size: 76px;
@@ -109,19 +119,19 @@ h2 {
   color: #fff;
 }
 
-/* line 106, ../../src/main/sass/app.scss */
+/* line 115, ../../src/main/sass/app.scss */
 h3 {
   font-size: 25px;
   font-weight: 600;
   color: #fff;
 }
 
-/* line 115, ../../src/main/sass/app.scss */
+/* line 124, ../../src/main/sass/app.scss */
 .gridster {
   margin: 0px auto;
 }
 
-/* line 119, ../../src/main/sass/app.scss */
+/* line 128, ../../src/main/sass/app.scss */
 .icon-background {
   pointer-events: none;
   width: 100% !important;
@@ -135,24 +145,24 @@ h3 {
   margin-top: 82px;
 }
 
-/* line 132, ../../src/main/sass/app.scss */
+/* line 141, ../../src/main/sass/app.scss */
 .list-nostyle {
   list-style: none;
 }
 
-/* line 136, ../../src/main/sass/app.scss */
+/* line 145, ../../src/main/sass/app.scss */
 .gridster ul {
   list-style: none;
 }
 
-/* line 140, ../../src/main/sass/app.scss */
+/* line 149, ../../src/main/sass/app.scss */
 .gs_w {
   width: 100%;
   display: table;
   cursor: pointer;
 }
 
-/* line 146, ../../src/main/sass/app.scss */
+/* line 155, ../../src/main/sass/app.scss */
 .widget {
   text-align: center;
   width: inherit;
@@ -161,23 +171,23 @@ h3 {
   vertical-align: middle;
 }
 
-/* line 154, ../../src/main/sass/app.scss */
+/* line 163, ../../src/main/sass/app.scss */
 .widget.status-warning {
   background-color: #e82711;
   -webkit-animation: status-warning-background 2s ease infinite;
   -moz-animation: status-warning-background 2s ease infinite;
   -ms-animation: status-warning-background 2s ease infinite;
 }
-/* line 158, ../../src/main/sass/app.scss */
+/* line 167, ../../src/main/sass/app.scss */
 .widget.status-warning .icon-warning-sign {
   display: inline-block;
 }
-/* line 162, ../../src/main/sass/app.scss */
+/* line 171, ../../src/main/sass/app.scss */
 .widget.status-warning .title, .widget.status-warning .more-info {
   color: #fff;
 }
 
-/* line 167, ../../src/main/sass/app.scss */
+/* line 176, ../../src/main/sass/app.scss */
 .widget.status-danger {
   color: #fff;
   background-color: #eeae32;
@@ -185,16 +195,33 @@ h3 {
   -moz-animation: status-danger-background 2s ease infinite;
   -ms-animation: status-danger-background 2s ease infinite;
 }
-/* line 172, ../../src/main/sass/app.scss */
+/* line 181, ../../src/main/sass/app.scss */
 .widget.status-danger .icon-warning-sign {
   display: inline-block;
 }
-/* line 176, ../../src/main/sass/app.scss */
+/* line 185, ../../src/main/sass/app.scss */
 .widget.status-danger .title, .widget.status-danger .more-info {
   color: #fff;
 }
 
-/* line 181, ../../src/main/sass/app.scss */
+/* line 190, ../../src/main/sass/app.scss */
+.widget.status-success {
+  color: #fff;
+  background-color: #00cb11;
+  -webkit-animation: status-success-background 2s ease infinite;
+  -moz-animation: status-success-background 2s ease infinite;
+  -ms-animation: status-success-background 2s ease infinite;
+}
+/* line 195, ../../src/main/sass/app.scss */
+.widget.status-success .icon-warning-sign {
+  display: inline-block;
+}
+/* line 199, ../../src/main/sass/app.scss */
+.widget.status-success .title, .widget.status-success .more-info {
+  color: #fff;
+}
+
+/* line 204, ../../src/main/sass/app.scss */
 .more-info {
   font-size: 15px;
   position: absolute;
@@ -203,7 +230,7 @@ h3 {
   right: 0;
 }
 
-/* line 189, ../../src/main/sass/app.scss */
+/* line 212, ../../src/main/sass/app.scss */
 .updated-at {
   font-size: 15px;
   position: absolute;
@@ -212,7 +239,7 @@ h3 {
   right: 0;
 }
 
-/* line 197, ../../src/main/sass/app.scss */
+/* line 220, ../../src/main/sass/app.scss */
 #save-gridster {
   display: none;
   position: fixed;
@@ -229,12 +256,12 @@ h3 {
   padding: 15px;
 }
 
-/* line 213, ../../src/main/sass/app.scss */
+/* line 236, ../../src/main/sass/app.scss */
 #save-gridster:hover {
   padding-top: 25px;
 }
 
-/* line 217, ../../src/main/sass/app.scss */
+/* line 240, ../../src/main/sass/app.scss */
 #saving-instructions {
   display: none;
   padding: 10px;
@@ -247,14 +274,14 @@ h3 {
   font-size: 15px;
   padding-bottom: 4px;
 }
-/* line 229, ../../src/main/sass/app.scss */
+/* line 252, ../../src/main/sass/app.scss */
 #saving-instructions textarea {
   white-space: nowrap;
   width: 494px;
   height: 80px;
 }
 
-/* line 236, ../../src/main/sass/app.scss */
+/* line 259, ../../src/main/sass/app.scss */
 #lean_overlay {
   position: fixed;
   z-index: 100;
@@ -266,12 +293,12 @@ h3 {
   display: none;
 }
 
-/* line 247, ../../src/main/sass/app.scss */
+/* line 270, ../../src/main/sass/app.scss */
 #container {
   padding-top: 5px;
 }
 
-/* line 255, ../../src/main/sass/app.scss */
+/* line 278, ../../src/main/sass/app.scss */
 .clearfix:before, .clearfix:after {
   content: "\0020";
   display: block;
@@ -279,12 +306,12 @@ h3 {
   overflow: hidden;
 }
 
-/* line 256, ../../src/main/sass/app.scss */
+/* line 279, ../../src/main/sass/app.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 257, ../../src/main/sass/app.scss */
+/* line 280, ../../src/main/sass/app.scss */
 .clearfix {
   zoom: 1;
 }
