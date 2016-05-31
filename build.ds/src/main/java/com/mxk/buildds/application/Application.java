@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationContext;
 import java.io.File;
 import java.io.IOException;
 
-@SpringBootApplication(scanBasePackages = "com.mxk.build.ds")
+@SpringBootApplication(scanBasePackages = "com.mxk.buildds")
 public class Application {
 
     private static String configLocation = "config/config.json";

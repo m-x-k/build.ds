@@ -1,11 +1,19 @@
 apply plugin: 'idea'
 
-task build(type: Copy) {
+task buildCHECK(type: Copy) {
+    // css compiles
     dependsOn (":sass:compassCompile")
     from ('sass/public/styles') {
         include '**/*.css'
     }
     into 'build.ds/src/main/resources/static/css'
+
+    // react javascript
+    dependsOn (":jsx:jsx")
+    from ('jsx/public') {
+        include '**/*.js'
+    }
+    into 'build.ds/src/main/resources/static/js'
 }
 
 task wrapper(type: Wrapper) {
