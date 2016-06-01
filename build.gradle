@@ -1,6 +1,6 @@
 apply plugin: 'idea'
 
-task buildCHECK(type: Copy) {
+task buildAndLoadStatic(type: Copy) {
     // css compiles
     dependsOn (":sass:compassCompile")
     from ('sass/public/styles') {
