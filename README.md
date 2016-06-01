@@ -7,3 +7,9 @@ NOTE: This is still a work in progress!!!
 
 ## Configuration
 See config/config.json for example setup
+
+## Development run
+./gradlew clean build bootRun -DdashboardConfig=<PATH>/config.json
+
+## Running the jar
+java -jar build-ds-*.jar --dashboardConfig=<PATH>/config.json

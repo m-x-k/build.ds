@@ -29,6 +29,10 @@ sourceSets {
     test
 }
 
+bootRun {
+    systemProperties System.properties
+}
+
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile("org.springframework.boot:spring-boot-devtools")
