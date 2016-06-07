@@ -4,11 +4,13 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE")
+        classpath 'net.saliman:gradle-cobertura-plugin:2.3.2'
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'spring-boot'
+apply plugin: 'net.saliman.cobertura'
 
 jar {
     baseName = 'build-ds'
