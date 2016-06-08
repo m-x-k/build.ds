@@ -14,7 +14,7 @@ var WidgetList = React.createClass({
             widgetData = []
         }
         var widgetNodes = widgetData.map(function(widget) {
-            var widgetClasses = "panel widget status-" + widget.label.toLowerCase() + " col-md-3";
+            var widgetClasses = "panel widget status-" + widget.widgetStatus.toLowerCase() + " col-md-3";
             return (
                 <div className={widgetClasses}>
                     <div className="panel-heading">
@@ -64,6 +64,6 @@ var WidgetBox = React.createClass({
 });
 
 ReactDOM.render(
-    <WidgetBox url="/widgets" pollInterval={5000} />,
+    <WidgetBox url="/widgets/health" pollInterval={10000} />,
     document.getElementById('content')
 );

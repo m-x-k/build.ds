@@ -17,4 +17,12 @@ public class Widget {
     public WidgetStatus getWidgetStatus() {
         return widgetStatus;
     }
+
+    @Override
+    public String toString() {
+        return "Widget{" +
+                "label='" + label + '\'' +
+                ", widgetStatus=" + widgetStatus +
+                '}';
+    }
 }

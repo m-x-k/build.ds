@@ -5,19 +5,20 @@ import java.util.List;
 
 public class Widgets {
 
-    private List<Widget> widgets;
-
-    public Widgets() {
-        // TODO adding for UX test purposes
-        List<Widget> widgets = new ArrayList<Widget>();
-        widgets.add(new Widget("Success", WidgetStatus.SUCCESS));
-        widgets.add(new Widget("Danger", WidgetStatus.DANGER));
-        widgets.add(new Widget("Disabled", WidgetStatus.DISABLED));
-        widgets.add(new Widget("Warning", WidgetStatus.WARNING));
-        this.widgets = widgets;
-    }
+    private List<Widget> widgets = new ArrayList<Widget>();
 
     public List<Widget> getWidgets() {
         return widgets;
+    }
+
+    public void addWidget(Widget widget) {
+        widgets.add(widget);
+    }
+
+    @Override
+    public String toString() {
+        return "Widgets{" +
+                "widgets=" + widgets +
+                '}';
     }
 }

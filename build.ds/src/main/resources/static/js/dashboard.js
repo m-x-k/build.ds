@@ -14,7 +14,7 @@ var WidgetList = React.createClass({displayName: "WidgetList",
             widgetData = []
         }
         var widgetNodes = widgetData.map(function(widget) {
-            var widgetClasses = "panel widget status-" + widget.label.toLowerCase() + " col-md-3";
+            var widgetClasses = "panel widget status-" + widget.widgetStatus.toLowerCase() + " col-md-3";
             return (
                 React.createElement("div", {className: widgetClasses}, 
                     React.createElement("div", {className: "panel-heading"}, 
@@ -64,6 +64,6 @@ var WidgetBox = React.createClass({displayName: "WidgetBox",
 });
 
 ReactDOM.render(
-    React.createElement(WidgetBox, {url: "/widgets", pollInterval: 5000}),
+    React.createElement(WidgetBox, {url: "/widgets/health", pollInterval: 10000}),
     document.getElementById('content')
 );

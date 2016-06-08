@@ -1,0 +1,4 @@
+healthcheck:
+    servers:
+        - http://server1
+        - http://server2
