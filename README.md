@@ -9,7 +9,7 @@ NOTE: This is still a work in progress!!!
 See config/config.json for example setup
 
 ## Development run
-./gradlew clean build bootRun -Dspring.config.location=PATH/config.json
+./gradlew clean build bootRun -Dspring.config.location=PATH/*.yml
 
 ## Running the jar
-java -jar build-ds-*.jar --spring.config.location=PATH/config.json
+java -jar build-ds-*.jar --spring.config.location=PATH/*.yml

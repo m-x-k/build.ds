@@ -7,7 +7,6 @@ import com.mxk.buildds.service.HealthCheckWidgetService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -21,7 +20,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.nio.charset.Charset;
 
-import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasToString;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -30,7 +28,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = MockServletContext.class)
 @WebAppConfiguration
-public class WidgetControllerTest {
+public class HealthCheckWidgetControllerTest {
 
     private MockMvc mvc;
 
@@ -47,7 +45,7 @@ public class WidgetControllerTest {
         Widgets widgets = new Widgets();
         widgets.addWidget(new Widget("labelX", WidgetStatus.SUCCESS));
         when(healthCheckWidgetService.getWidgets()).thenReturn(widgets);
-        mvc = MockMvcBuilders.standaloneSetup(new WidgetController(healthCheckWidgetService)).build();
+        mvc = MockMvcBuilders.standaloneSetup(new HealthCheckWidgetController(healthCheckWidgetService)).build();
     }
 
     @Test

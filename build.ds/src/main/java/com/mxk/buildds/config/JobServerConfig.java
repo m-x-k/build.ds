@@ -55,4 +55,15 @@ public class JobServerConfig {
     public void setJoblist(List<Map> joblist) {
         this.joblist = joblist;
     }
+
+    @Override
+    public String toString() {
+        return "JobServerConfig{" +
+                "type='" + type + '\'' +
+                ", url='" + url + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", joblist=" + joblist +
+                '}';
+    }
 }

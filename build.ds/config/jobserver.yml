@@ -1,0 +1,22 @@
+jobserver:
+    type:     jenkins
+    url:      url
+    username: username
+    password: password
+
+    joblist:
+        -
+          label:    job0
+          path:
+          display:  true
+
+        -
+          label:    job1
+          path:
+          display:  true
+
+        -
+          label:    job2
+          path:
+          display:  true
+

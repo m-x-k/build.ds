@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class WidgetController {
+public class HealthCheckWidgetController {
 
     private HealthCheckWidgetService healthCheckWidgetService;
 
     @Autowired
-    public WidgetController(HealthCheckWidgetService healthCheckWidgetService) {
+    public HealthCheckWidgetController(HealthCheckWidgetService healthCheckWidgetService) {
         this.healthCheckWidgetService = healthCheckWidgetService;
     }
 
