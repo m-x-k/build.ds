@@ -14,4 +14,6 @@ See config/config.json for example setup
 ## Running the jar
 java -jar build-ds-*.jar --spring.config.location=PATH/*.yml
 
+[![Build Status](https://travis-ci.org/m-x-k/build.ds.svg?branch=master)](https://travis-ci.org/m-x-k/build.ds)
+
 [![codecov](https://codecov.io/gh/m-x-k/build.ds/branch/master/graph/badge.svg)](https://codecov.io/gh/m-x-k/build.ds)
