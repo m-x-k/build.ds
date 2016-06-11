@@ -1,5 +1,9 @@
 apply plugin: 'idea'
 
+allprojects {
+    apply plugin: 'idea'
+}
+
 task buildAndLoadStatic(type: Copy) {
     // css compiles
     dependsOn (":sass:compassCompile")
@@ -18,4 +22,10 @@ task buildAndLoadStatic(type: Copy) {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.3'
+}
+
+idea {
+    project {
+        vcs = 'Git'
+    }
 }

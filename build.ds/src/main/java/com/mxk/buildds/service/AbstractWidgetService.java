@@ -4,7 +4,7 @@ import com.mxk.buildds.model.Widgets;
 
 public abstract class AbstractWidgetService {
 
-    protected Widgets widgets;
+    protected Widgets widgets = new Widgets();
 
     public Widgets getWidgets() {
         return widgets;
