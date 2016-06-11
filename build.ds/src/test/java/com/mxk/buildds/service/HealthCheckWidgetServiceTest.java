@@ -52,6 +52,13 @@ public class HealthCheckWidgetServiceTest {
         MockitoAnnotations.initMocks(this);
     }
 
+    @Test
+    public void testUpdateWidgets_emptyWidgetList() throws Exception {
+        healthCheckWidgetService.updateWidgets();
+        Widgets widgets = healthCheckWidgetService.getWidgets();
+        assertEquals(0, widgets.getWidgets().size());
+    }
+
     /*
      * Scenario: Update Widget list
      *
