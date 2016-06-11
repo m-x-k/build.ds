@@ -59,6 +59,21 @@ public class HealthCheckWidgetServiceTest {
         assertEquals(0, widgets.getWidgets().size());
     }
 
+    @Test
+    public void testUpdateWidgets_throwsIOError() throws Exception {
+        List<Server> servers = new ArrayList<Server>();
+        Server server = createServer("test", "http://localhost");
+        servers.add(server);
+        when(healthCheckConfig.getServers()).thenReturn(servers);
+        mockHttpGetIOException();
+
+        healthCheckWidgetService.updateWidgets();
+        Widgets widgets = healthCheckWidgetService.getWidgets();
+        assertEquals(1, widgets.getWidgets().size());
+        assertEquals("test", widgets.getWidgets().get(0).getLabel());
+        assertEquals(WidgetStatus.DANGER, widgets.getWidgets().get(0).getWidgetStatus());
+    }
+
     /*
      * Scenario: Update Widget list
      *
@@ -125,4 +140,12 @@ public class HealthCheckWidgetServiceTest {
         when(closeableHttpClient.execute(any(HttpGet.class))).thenReturn(closeableHttpResponse);
         when(HttpClients.createDefault()).thenReturn(closeableHttpClient);
     }
+
+    private void mockHttpGetIOException() throws IOException {
+        PowerMockito.mockStatic(HttpClients.class);
+        CloseableHttpClient closeableHttpClient = mock(CloseableHttpClient.class);
+        when(closeableHttpClient.execute(any(HttpGet.class))).thenThrow(IOException.class);
+        when(HttpClients.createDefault()).thenReturn(closeableHttpClient);
+    }
+
 }
