@@ -19,6 +19,14 @@ import static org.powermock.api.mockito.PowerMockito.when;
 @PrepareForTest(SpringApplication.class)
 public class ApplicationTest {
 
+    /*
+     * Empty test for future
+     */
+    @Test
+    public void testApplication() {
+        new Application();
+    }
+
     @Test
     public void testMain() throws Exception {
         String[] args = {};
