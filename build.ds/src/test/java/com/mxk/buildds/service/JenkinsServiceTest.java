@@ -20,7 +20,6 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -47,6 +46,8 @@ public class JenkinsServiceTest {
     @Test
     public void testGetJenkinsServer() {
         assertNotNull(jenkinsService.getJenkinsServer("user", "pass", "http://localhost"));
+        assertNotNull(jenkinsService.getJenkinsServer("user", "", "http://localhost"));
+        assertNotNull(jenkinsService.getJenkinsServer("", "pass", "http://localhost"));
         assertNotNull(jenkinsService.getJenkinsServer("", "", "http://localhost"));
         assertNotNull(jenkinsService.getJenkinsServer(null, null, "http://localhost"));
     }
@@ -96,11 +97,50 @@ public class JenkinsServiceTest {
     }
 
     @Test
+    public void testAddJenkinsJobWidgets_job_not_exist() throws Exception {
+        joblist.add(createConfigJob("unknown", "http://random"));
+        JenkinsServer mockJenkins = mock(JenkinsServer.class);
+        jobs.put("other", mockJob(BuildResult.SUCCESS));
+        when(mockJenkins.getJobs()).thenReturn(jobs);
+
+        jenkinsService.addJenkinsJobWidgets(mockJenkins, widgets, joblist);
+
+        List<Widget> widgets = this.widgets.getWidgets();
+        assertEquals(0, widgets.size());
+    }
+
+    @Test
+    public void testAddJenkinsJobWidgets_no_jobs_returned() throws Exception {
+        joblist.add(createConfigJob("job1", "http://bogus"));
+        JenkinsServer mockJenkins = mock(JenkinsServer.class);
+        jobs.put("job1", mockJobResponse(null, null, null, null, null, true));
+        when(mockJenkins.getJobs()).thenReturn(jobs);
+
+        jenkinsService.addJenkinsJobWidgets(mockJenkins, widgets, joblist);
+
+        assertEquals(0, widgets.getWidgets().size());
+    }
+
+    @Test
     public void testAddJenkinsJobWidgets_job_no_details() throws Exception {
         joblist.add(createConfigJob("job1", "http://bogus"));
         JenkinsServer mockJenkins = mock(JenkinsServer.class);
         Job job = mock(Job.class);
-        jobs.put("job1", mockJobResponse(job, null, null, null, null));
+        jobs.put("job1", mockJobResponse(job, null, null, null, null, true));
+        when(mockJenkins.getJobs()).thenReturn(jobs);
+
+        jenkinsService.addJenkinsJobWidgets(mockJenkins, widgets, joblist);
+
+        assertEquals(0, widgets.getWidgets().size());
+    }
+
+    @Test
+    public void testAddJenkinsJobWidgets_job_no_details_list() throws Exception {
+        joblist.add(createConfigJob("job1", "http://bogus"));
+        JenkinsServer mockJenkins = mock(JenkinsServer.class);
+        Job job = mock(Job.class);
+        JobWithDetails jobWithDetails = mock(JobWithDetails.class);
+        jobs.put("job1", mockJobResponse(job, jobWithDetails, null, null, null, false));
         when(mockJenkins.getJobs()).thenReturn(jobs);
 
         jenkinsService.addJenkinsJobWidgets(mockJenkins, widgets, joblist);
@@ -114,7 +154,7 @@ public class JenkinsServiceTest {
         JenkinsServer mockJenkins = mock(JenkinsServer.class);
         Job job = mock(Job.class);
         JobWithDetails jobWithDetails = mock(JobWithDetails.class);
-        jobs.put("job1", mockJobResponse(job, jobWithDetails, null, null, null));
+        jobs.put("job1", mockJobResponse(job, jobWithDetails, null, null, null, true));
         when(mockJenkins.getJobs()).thenReturn(jobs);
 
         jenkinsService.addJenkinsJobWidgets(mockJenkins, widgets, joblist);
@@ -129,7 +169,7 @@ public class JenkinsServiceTest {
         Job job = mock(Job.class);
         JobWithDetails jobWithDetails = mock(JobWithDetails.class);
         Build jobLastBuild = mock(Build.class);
-        jobs.put("job1", mockJobResponse(job, jobWithDetails, jobLastBuild, null, null));
+        jobs.put("job1", mockJobResponse(job, jobWithDetails, jobLastBuild, null, null, true));
         when(mockJenkins.getJobs()).thenReturn(jobs);
 
         jenkinsService.addJenkinsJobWidgets(mockJenkins, widgets, joblist);
@@ -145,7 +185,7 @@ public class JenkinsServiceTest {
         JobWithDetails jobWithDetails = mock(JobWithDetails.class);
         Build jobLastBuild = mock(Build.class);
         BuildWithDetails buildWithDetails = mock(BuildWithDetails.class);
-        jobs.put("job1", mockJobResponse(job, jobWithDetails, jobLastBuild, buildWithDetails, null));
+        jobs.put("job1", mockJobResponse(job, jobWithDetails, jobLastBuild, buildWithDetails, null, true));
         when(mockJenkins.getJobs()).thenReturn(jobs);
 
         jenkinsService.addJenkinsJobWidgets(mockJenkins, widgets, joblist);
@@ -159,24 +199,32 @@ public class JenkinsServiceTest {
         Build jobLastBuild = mock(Build.class);
         BuildWithDetails buildWithDetails = mock(BuildWithDetails.class);
 
-        return mockJobResponse(job, jobWithDetails, jobLastBuild, buildWithDetails, buildResult);
+        return mockJobResponse(job, jobWithDetails, jobLastBuild, buildWithDetails, buildResult, true);
     }
 
     private Job mockJobResponse(Job job, JobWithDetails jobWithDetails, Build jobLastBuild,
-                                BuildWithDetails buildWithDetails, BuildResult buildResult) throws IOException {
+                                BuildWithDetails buildWithDetails, BuildResult buildResult, boolean allBuilds) throws IOException {
 
-        when(job.details()).thenReturn(jobWithDetails);
-        if (jobWithDetails != null) {
-            ArrayList<Build> builds = new ArrayList<Build>();
-            builds.add(jobLastBuild);
+        if (job != null) {
+            when(job.details()).thenReturn(jobWithDetails);
 
-            when(jobWithDetails.getAllBuilds()).thenReturn(builds);
-            when(jobWithDetails.getLastBuild()).thenReturn(jobLastBuild);
+            if (jobWithDetails != null) {
+
+                if (allBuilds) {
+                    ArrayList<Build> builds = new ArrayList<Build>();
+                    builds.add(jobLastBuild);
+                    when(jobWithDetails.getAllBuilds()).thenReturn(builds);
+                }
+                when(jobWithDetails.getLastBuild()).thenReturn(jobLastBuild);
+
+                if (jobLastBuild != null) {
+                    when(jobLastBuild.details()).thenReturn(buildWithDetails);
+
+                    if (buildWithDetails != null)
+                        when(buildWithDetails.getResult()).thenReturn(buildResult);
+                }
+            }
         }
-        if (jobLastBuild != null)
-            when(jobLastBuild.details()).thenReturn(buildWithDetails);
-        if (buildWithDetails != null)
-            when(buildWithDetails.getResult()).thenReturn(buildResult);
 
         return job;
     }
@@ -196,5 +244,15 @@ public class JenkinsServiceTest {
     @Test
     public void testIsJenkins_false() throws Exception {
         assertFalse(jenkinsService.isJenkins(""));
+    }
+
+    @Test
+    public void testIsJenkins_empty() throws Exception {
+        assertFalse(jenkinsService.isJenkins(null));
+    }
+
+    @Test
+    public void testIsJenkins_mismatch() throws Exception {
+        assertFalse(jenkinsService.isJenkins("other"));
     }
 }
