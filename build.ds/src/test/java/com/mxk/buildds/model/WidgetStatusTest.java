@@ -12,5 +12,7 @@ public class WidgetStatusTest {
         assertEquals("disabled", WidgetStatus.DISABLED.getName());
         assertEquals("success",  WidgetStatus.SUCCESS.getName());
         assertEquals("warning",  WidgetStatus.WARNING.getName());
+
+        assertEquals(WidgetStatus.DANGER, WidgetStatus.valueOf("DANGER"));
     }
 }

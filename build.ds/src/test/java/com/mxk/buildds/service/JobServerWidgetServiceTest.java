@@ -15,9 +15,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class JobServerWidgetServiceTest {
@@ -58,5 +56,17 @@ public class JobServerWidgetServiceTest {
         Widgets widgets = jobServerWidgetService.getWidgets();
         assertEquals(0, widgets.getWidgets().size());
         verify(jenkinsService).addJenkinsJobWidgets(jenkinsServer, widgets, joblist);
+    }
+
+    @Test
+    public void testUpdateWidgets_unknown_type() throws Exception {
+        String type = "unknown";
+        when(jobServerConfig.getType()).thenReturn(type);
+        when(jenkinsService.isJenkins(type)).thenReturn(false);
+
+        jobServerWidgetService.updateWidgets();
+
+        Widgets widgets = jobServerWidgetService.getWidgets();
+        assertEquals(0, widgets.getWidgets().size());
     }
 }
