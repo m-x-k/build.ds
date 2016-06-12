@@ -1,6 +1,5 @@
-FROM jenkins:1.565.3
+FROM tomdesinto/jenkins-dsl-ready
 
-COPY https.pem /var/lib/jenkins/cert
-COPY https.key /var/lib/jenkins/pk
-ENV JENKINS_OPTS --httpPort=-1 --httpsPort=8083 --httpsCertificate=/var/lib/jenkins/cert --httpsPrivateKey=/var/lib/jenkins/pk
-EXPOSE 8083
+COPY jobs/*.groovy /usr/share/jenkins/ref/jobs/SeedJob/workspace/
+
+EXPOSE 8080
