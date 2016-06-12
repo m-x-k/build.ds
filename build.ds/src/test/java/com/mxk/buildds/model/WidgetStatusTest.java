@@ -8,9 +8,9 @@ public class WidgetStatusTest {
 
     @Test
     public void testGetName() throws Exception {
-        assertEquals(WidgetStatus.DANGER.getName(), "danger");
-        assertEquals(WidgetStatus.DISABLED.getName(), "disabled");
-        assertEquals(WidgetStatus.SUCCESS.getName(), "success");
-        assertEquals(WidgetStatus.WARNING.getName(), "warning");
+        assertEquals("danger",   WidgetStatus.DANGER.getName());
+        assertEquals("disabled", WidgetStatus.DISABLED.getName());
+        assertEquals("success",  WidgetStatus.SUCCESS.getName());
+        assertEquals("warning",  WidgetStatus.WARNING.getName());
     }
 }
