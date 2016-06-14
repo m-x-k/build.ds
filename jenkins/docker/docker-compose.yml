@@ -1,4 +1,0 @@
-jenkins:
-    build: .
-    ports:
-      - 9000:8080

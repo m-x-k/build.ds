@@ -5,6 +5,7 @@ RUN mkdir /config
 
 ADD build.ds/build/libs/build-ds-0.1.0.jar  /app/
 ADD build.ds/config/healthcheck.yml         /config/
+ADD build.ds/config/jobserver.yml           /config/
 
 EXPOSE 8181
 

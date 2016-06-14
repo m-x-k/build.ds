@@ -1,0 +1,9 @@
+build.ds:
+    build: .
+    ports:
+    - "8180:8181"
+
+jenkins:
+    build: jenkins/docker/.
+    ports:
+    - "8080:8080"
