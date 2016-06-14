@@ -4,17 +4,20 @@ allprojects {
     apply plugin: 'idea'
 }
 
-task buildAndLoadStatic(type: Copy) {
+task buildAndLoadStaticCSS(type: Copy) {
     // css compiles
-    dependsOn (":sass:compassCompile")
-    from ('sass/public/styles') {
+    dependsOn(":sass:compassCompile")
+    from('sass/public/styles') {
         include '**/*.css'
     }
     into 'build.ds/src/main/resources/static/css'
+}
 
+task buildAndLoadStaticJS(type: Copy) {
     // react javascript
     dependsOn (":jsx:jsx")
     from ('jsx/public') {
+        exclude '.module-cache/'
         include '**/*.js'
     }
     into 'build.ds/src/main/resources/static/js'

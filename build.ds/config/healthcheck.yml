@@ -1,7 +1,7 @@
 healthcheck:
     servers:
         -
-            url: http://localhost:8080/css/app.css
+            url: http://localhost:8181/css/app.css
             label: local server
 
         -

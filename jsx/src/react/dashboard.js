@@ -1,12 +1,3 @@
-var Widget = React.createClass({
-    render: function() {
-        return (
-            <div className="widget">
-            </div>
-        );
-    }
-});
-
 var WidgetList = React.createClass({
     render: function() {
         var widgetData = this.props.data.widgets;
