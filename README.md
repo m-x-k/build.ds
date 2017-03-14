@@ -6,7 +6,7 @@ NOTE: This is still a work in progress!!!
 
 
 ## Configuration
-See config/config.json for example setup
+See build.ds/config/jobserver.json for example jenkins job setup and build.ds/config/healthcheck.json for the healthcheck endpoint setup.
 
 ## Development run
 ./gradlew clean build bootRun -Dspring.config.location=PATH/*.yml
